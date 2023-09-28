@@ -23,7 +23,7 @@ tags = data.get('tags', [])
 if not isinstance(tags, list) or not all(isinstance(tag, str) for tag in tags):
     return web.json_response({'error': '"tags" must be a list of strings'})
 data['tags'] = tags
-
+```
 
 ## 2. Updating the Create Todo Function
 
@@ -35,3 +35,28 @@ tags = data.get('tags', [])
 if not isinstance(tags, list) or not all(isinstance(tag, str) for tag in tags):
     return web.json_response({'error': '"tags" must be a list of strings'})
 data['tags'] = tags
+```
+
+### 3. Adding an Endpoint to Get Todos by Tag
+
+```markdown
+## 3. Adding an Endpoint to Get Todos by Tag
+
+I've created a new endpoint to retrieve todos by a specific tag. This endpoint is named `get_todos_by_tag`. It filters todos based on the tag parameter provided in the URL. Here's the code for the endpoint:
+
+```python
+def get_todos_by_tag(request):
+    tag = request.match_info['tag']
+    todos_with_tag = [{'id': key, **todo} for key, todo in TODOS.items() if tag in todo.get('tags', [])]
+    if not todos_with_tag:
+        return web.json_response({'error': f'No todos found with the tag "{tag}"'}, status=404)
+    return web.json_response(todos_with_tag)
+
+```
+
+## 4. Updating the CORS Configuration
+
+To ensure proper handling of cross-origin requests for the new endpoint that retrieves todos by tag, I've added the following line to our CORS (Cross-Origin Resource Sharing) configuration:
+
+```python
+cors.add(app.router.add_get('/todos/tag/{tag}', get_todos_by_tag, name='todos_by_tag'))
