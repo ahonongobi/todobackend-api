@@ -10,9 +10,9 @@ Before you get started, ensure you have the following installed on your system:
 - pip (Python package manager)
 - aiohttp and aiohttp_cors Python packages
 - You may use (python -m venv venv and  source venv/bin/activate) 
+- For my database i choose MySQL, so execute pip install aiomysql
 
-
-You can install aiohttp and aiohttp_cors using pip:
+You can install aiohttp, aiommysql and aiohttp_cors using pip:
 
 ```bash
 pip install aiohttp aiohttp_cors
@@ -24,6 +24,9 @@ pip install -r requirements.txt
 
 ```
 
+```bash
+pip install aiomysql
+```
 # Extending Todo-Backend with Tags
 
 I explain how I extended the Todo-Backend API to include tags for todos and added the ability to retrieve todos by specific tags. Below are the steps I followed to do it.
