@@ -1,3 +1,29 @@
+# Aiohttp Todo-Backend Project
+
+This is a Todo-Backend project built with aiohttp.
+
+## Informations 
+
+Before you get started, ensure you have the following installed on your system:
+
+- Python (version 3.7 or later)
+- pip (Python package manager)
+- aiohttp and aiohttp_cors Python packages
+- You may use (python -m venv venv and  source venv/bin/activate) 
+
+
+You can install aiohttp and aiohttp_cors using pip:
+
+```bash
+pip install aiohttp aiohttp_cors
+
+```
+or 
+```bash
+pip install -r requirements.txt
+
+```
+
 # Extending Todo-Backend with Tags
 
 I explain how I extended the Todo-Backend API to include tags for todos and added the ability to retrieve todos by specific tags. Below are the steps I followed to do it.
