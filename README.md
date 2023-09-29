@@ -7,6 +7,11 @@ Yet another [todo backend](http://todobackend.com) written in Python 3.5 with ai
 ```
 python3 aiotodo.py
 ```
+```python
+
+ pip install -r requirements.txt
+
+ ```
 
 ## Tests
 
